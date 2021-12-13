@@ -1,10 +1,10 @@
-import Counter from './components/Counter/Counter';
+import Router from './routes/Router';
 import { GlobalStyles } from './style/globalStyle';
 
 function App() {
   return (
     <>
-      <Counter />
+      <Router/>
       <GlobalStyles />
     </>
   );

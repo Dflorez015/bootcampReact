@@ -17,16 +17,16 @@ export default function Counter() {
 
 
     return (
-        <SCC.StyleCard theme={{ stand: 10 }}>            
+        <SCC.StyleCard theme={{ stand: 10 }}>
             <SCC.StyleFlex theme={columnCommon}>
                 <SCC.StyleH1 theme={h1Center}>{count}</SCC.StyleH1>
                 <SCC.StyleFlex theme={rowCommon}>
-                    <SCC.StyleButton type='button' theme={sumButton} onClick={() => sum()}>
-                        Sumar
-                    </SCC.StyleButton>{/* sumButton */}
                     <SCC.StyleButton type='button' theme={resButton} onClick={() => rest()}>
                         Restar
                     </SCC.StyleButton>{/* restButton */}
+                    <SCC.StyleButton type='button' theme={sumButton} onClick={() => sum()}>
+                        Sumar
+                    </SCC.StyleButton>{/* sumButton */}
                 </SCC.StyleFlex>{/* horizontalFlex */}
             </SCC.StyleFlex>{/* verticalFlex */}
         </SCC.StyleCard>

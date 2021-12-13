@@ -8,16 +8,16 @@ const backGroundButtonMain = "#fff"
 // keyframes
 export const standOutKF = (h: number) => keyframes`
 0% {
-    opacity: 0;
+    opacity: .01;
     max-height: 0px;
 }
 40%{
-    max-height: ${(h * 0.45) + "rem"};
+    max-height: ${h + "rem"};
     opacity: .1;
 }
 60%{
-    max-height: ${(h * 0.9) + "rem"};
-    opacity: .2;
+    max-height: ${h + "rem"};
+    opacity: .3;
 }
 100%{
     max-height:${h + "rem"};
@@ -28,12 +28,18 @@ export const standOutKF = (h: number) => keyframes`
 export const GlobalStyles = createGlobalStyle`
 
 :root {
-    --gray-1: #ECECEC
+    --gray-1: #ECECEC;
+    --hover-txt: #b3afaf;
 }
 
 *{
     padding: 0px;
     margin: 0px;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
 }
 
 & button {
@@ -51,10 +57,33 @@ export const GlobalStyles = createGlobalStyle`
         box-shadow: 0px 3px 6px #00000029;
     }
 }
+
+& a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    transition: color .2s ease-in-out;
+    padding: ${gap};
+    :hover {
+        color: var(--hover-txt);
+    }    
+}
+
+& .active {
+     background-color: var(--gray-1);
+ }
+
 `
 
 export const MainWrapper = styled.div`
- width: 100vw;
- height: 100vh;
+ height: 100%;
+ width: 100%;
 `
+export const AppWrapper = styled.div`
+display: flex;
+flex-direction: column;
+gap: 1rem;
+width: 100%;
+height: 100%;
 
+`
