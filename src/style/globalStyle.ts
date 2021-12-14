@@ -3,21 +3,26 @@ import styled, { createGlobalStyle, keyframes } from "styled-components"
 export const borderRadius = "22px"
 export const padding = ".5rem"
 export const gap = ".5rem"
+export const marg_left = "8rem" // x100 gap + ajuste
 const backGroundButtonMain = "#fff"
 
 // keyframes
 export const standOutKF = (h: number) => keyframes`
 0% {
-    opacity: .01;
     max-height: 0px;
+    opacity: 0;
 }
 40%{
     max-height: ${h + "rem"};
-    opacity: .1;
+    opacity: .01;
 }
 60%{
     max-height: ${h + "rem"};
     opacity: .3;
+}
+80%{
+    max-height: ${h + "rem"};
+    opacity: .5;
 }
 100%{
     max-height:${h + "rem"};
@@ -30,6 +35,9 @@ export const GlobalStyles = createGlobalStyle`
 :root {
     --gray-1: #ECECEC;
     --hover-txt: #b3afaf;
+    --pink-1: #f8d7da;
+    --pink-2: #f5c6cb;
+    --red-wine: #be1e37;
 }
 
 *{
@@ -85,5 +93,13 @@ flex-direction: column;
 gap: 1rem;
 width: 100%;
 height: 100%;
+
+& input[type=number]::-webkit-inner-spin-button, 
+ input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+& input[type=number] { -moz-appearance:textfield; }
 
 `

@@ -11,6 +11,7 @@ export default function Router() {
                 key={index}
                 path={route.path}
                 element={route.element}
+                index={route.exact}
             />
         ))
     }

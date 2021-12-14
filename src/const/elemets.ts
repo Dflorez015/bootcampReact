@@ -19,5 +19,5 @@ export const h1Center = { direction: "center" }
 /**
  * Form
  */
-export const loginAreas = { areas: `"name name name name" "lname lname lname lname" "cel cel tel tel" "emp1 subm subm emp2" `}
-export const rowCommonForm = { direction: "row", gap: "2rem", width: "100%", justifyC: "left" }
+export const loginAreas = { areas: `"name name name name" "lname lname lname lname" "cel cel tel tel" "email email email email" "pass pass pass pass" "emp1 subm subm emp2"`}
+export const rowCommonForm = { ...rowCommon , justifyC: "left" }

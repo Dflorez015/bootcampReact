@@ -1,7 +1,10 @@
 import styled from "styled-components";
-import { gap, padding, standOutKF } from "../../style/globalStyle";
+import { gap, marg_left, padding, standOutKF } from "../../style/globalStyle";
 
 
+/**
+ * Contenedores--------------------------------------------
+ */
 export const StyleCard = styled.div`
 grid-area: ${({ theme }) => (theme.area ? theme.area : "")};
 background-color: white;
@@ -19,13 +22,6 @@ gap: ${gap};
 animation: 1s ${standOutKF(15)} ease-in-out;
 `
 
-export const StyleButton = styled.button`
-backGround-color :${({ theme }) => (theme.color)};
-color:${({ theme }) => (theme.textC)};
-:hover{    
-    backGround-color: ${({ theme }) => (theme.colorHover)};
-}
-`
 
 export const StyleFlex = styled.div`
 display: flex;
@@ -47,10 +43,24 @@ margin-bottom: ${gap};
 }
 `
 
+/**
+ *  Botones y titulos--------------------------------------------
+ */
+export const StyleButton = styled.button`
+backGround-color :${({ theme }) => (theme.color)};
+color:${({ theme }) => (theme.textC)};
+:hover{    
+    backGround-color: ${({ theme }) => (theme.colorHover)};
+}
+`
+
 export const StyleH1 = styled.h1`
 text-align: ${({ theme }) => (theme.direction)};
 `
 
+/**
+ * Formularios y elementos para los mismos----------------------------------------
+ */
 export const StyleForm = styled.form`
 display: grid;
 grid-template-areas: ${({ theme }) => (theme.areas)};
@@ -58,8 +68,8 @@ grid-gap: ${gap};
 `
 
 export const StyleFlexFormRow = styled(StyleFlex)`
-grid-area: ${({ theme }) => (theme.area)};
 height: fit-content;
+grid-area: ${({theme}) => theme.area};
 & label {
     width: ${({ theme }) => (theme.lwidth)};
     padding: 5px ${padding};
@@ -71,6 +81,11 @@ height: fit-content;
 }
 `
 
+export const StyleFlexFormColumn = styled(StyleFlex)`
+grid-area: ${({theme}) => theme.area};
+gap: 3px;
+`
+
 export const StyleInput = styled.input`
 border: 1px solid var(--hover-txt);
 border-radius: 22px;   
@@ -80,4 +95,15 @@ max-height: 24px;
     outline: none !important;
     border-color: blue;
 }
+`
+
+export const StyleErrSpan = styled.span`
+animation: 1s ${standOutKF(15)} ease-in-out;
+padding: 2px ${padding};
+margin-left: ${marg_left};
+background-color: var(--pink-1);
+border: solid 1px var(--pink-2);
+color: var(--red-wine) ;
+font-size: 11px;
+
 `
