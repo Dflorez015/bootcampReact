@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { gap, marg_left, padding, standOutKF } from "../../style/globalStyle";
+import { gap, marg_left, padding, standOutKF, appear } from "../../style/globalStyle";
 
 
 /**
@@ -19,17 +19,22 @@ flex-direction: column;
 gap: ${gap};
 
 //efects
-animation: 1s ${standOutKF(15)} ease-in-out;
+animation: .4s ${standOutKF} linear;
+
+& div {
+    animation: .6s ${appear} ease-in;
+}
 `
 
 
 export const StyleFlex = styled.div`
 display: flex;
+margin: auto;
 flex-direction: ${({ theme }) => (theme.direction)};
 gap: ${({ theme }) => (theme.gap)};
 width: ${({ theme }) => (theme.width)};
 justify-content: ${({ theme }) => (theme.justifyC)};
-align-items: center;
+align-items: ${({ theme }) => (theme.align)};
 `
 
 export const StyleUl = styled.ul`
@@ -37,9 +42,13 @@ display: flex;
 justify-content: center;
 width: 100%;
 margin-bottom: ${gap};
+background-color: ${({theme}) => (theme.bgC)};
 & li {
     list-style: none;
     margin: ${gap};
+    & a {
+        font-weight: 500;
+    }
 }
 `
 
@@ -98,12 +107,11 @@ max-height: 24px;
 `
 
 export const StyleErrSpan = styled.span`
-animation: 1s ${standOutKF(15)} ease-in-out;
+animation: 1s ${standOutKF} linear;
 padding: 2px ${padding};
 margin-left: ${marg_left};
 background-color: var(--pink-1);
 border: solid 1px var(--pink-2);
 color: var(--red-wine) ;
 font-size: 11px;
-
 `

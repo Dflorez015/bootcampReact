@@ -4,8 +4,8 @@
 export interface IRegister {
     name: string
     lname: string
-    cel: number
-    tel: number
+    cel: string
+    tel: string
     email: string
     password: string
 }

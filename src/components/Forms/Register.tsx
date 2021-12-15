@@ -5,11 +5,15 @@ import { IRegister } from './inputs/interface'
 import { inputTextAttr, inputNumbAttr, inputPassAttr } from './inputs/inputs'
 import { required, minLength, maxLength, pattern } from './inputs/errInputs'
 import { expMail, expCell, expTell } from "./inputs/expressions"
+import { addRegData } from '../../context/form/formFunction'
+import { useDispatch } from 'react-redux'
 
 export default function Register() {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<IRegister>()
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<IRegister>()
+    const dispatch = useDispatch()
 
-    const onSubmit: SubmitHandler<IRegister> = data => console.log(data);
+    const resetForm = (data: IRegister) => { reset(data) }
+    const onSubmit: SubmitHandler<IRegister> = data => dispatch(addRegData(data, resetForm));
 
     return (
         <SCC.StyleCard> {/* card form */}
@@ -106,8 +110,8 @@ export default function Register() {
 
                     <SCC.StyleFlexFormRow
                         theme={{ ...rowCommon, area: "subm" }}>
-                        <SCC.StyleButton theme={sendButton} type='submit'>Enviar</SCC.StyleButton>
-                    </SCC.StyleFlexFormRow>
+                        <SCC.StyleButton theme={sendButton} type='submit'><h3>Enviar</h3></SCC.StyleButton>
+                    </SCC.StyleFlexFormRow> {/*BTN submit */}
 
                 </SCC.StyleForm> {/* form */}
             </SCC.StyleFlex> {/* column flex */}

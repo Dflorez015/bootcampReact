@@ -9,8 +9,8 @@ export const counterSlice = createSlice({
             state.count = action.payload
         }
     }
-
 })
+
 export const { addCounter } = counterSlice.actions
 
 export default counterSlice.reducer

@@ -7,25 +7,27 @@ export const marg_left = "8rem" // x100 gap + ajuste
 const backGroundButtonMain = "#fff"
 
 // keyframes
-export const standOutKF = (h: number) => keyframes`
+export const standOutKF = keyframes`
 0% {
-    max-height: 0px;
-    opacity: 0;
+    max-height: 0px;    
 }
 40%{
-    max-height: ${h + "rem"};
-    opacity: .01;
+    max-height: 20%;    
 }
 60%{
-    max-height: ${h + "rem"};
-    opacity: .3;
+    max-height: 40%;    
 }
 80%{
-    max-height: ${h + "rem"};
-    opacity: .5;
+    max-height: 80%;    
 }
 100%{
-    max-height:${h + "rem"};
+    max-height: 100%;    
+}
+`
+export const appear = keyframes`
+from{
+    opacity: 0;
+}to{
     opacity: 1;
 }
 `
@@ -79,6 +81,7 @@ export const GlobalStyles = createGlobalStyle`
 
 & .active {
      background-color: var(--gray-1);
+     border-radius: 10px 10px 0px 0px;
  }
 
 `
@@ -86,6 +89,7 @@ export const GlobalStyles = createGlobalStyle`
 export const MainWrapper = styled.div`
  height: 100%;
  width: 100%;
+ overflow-y: hidden;
 `
 export const AppWrapper = styled.div`
 display: flex;

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counter from "./counter/counterSlice"
+import forms from "./form/formSlice"
 
-export const store =  configureStore ({
+export const store = configureStore({
     reducer: {
-        counter 
+        counter,
+        forms
     }
 })
 

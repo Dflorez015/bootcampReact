@@ -8,13 +8,14 @@ export const sendButton = { color: "#2323c5", colorHover: "#000092", textC: "#ff
 /**
  * Flex
  */
-export const rowCommon = { direction: "row", gap: "2rem", width: "100%", justifyC: "center" }
-export const columnCommon = { direction: "column", gap: "2rem", width: "100%", justifyC: "center" }
+export const rowCommon = { direction: "row", gap: "2rem", width: "100%", justifyC: "center", align: "center" }
+export const columnCommon = { direction: "column", gap: "2rem", width: "100%", justifyC: "center", align: "center" }
 
 /**
  * H1
  */
 export const h1Center = { direction: "center" }
+export const h1Left = { direction: "left" }
 
 /**
  * Form

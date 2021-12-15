@@ -1,21 +1,22 @@
 import { Dispatch } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 import { addCounter } from "./counterSlice";
 
 
 /**
  * Suma el número ingresado
- * @param {number} num 
  * @returns 
  */
-export const sumCont = (num: number) => (dispatch: Dispatch) => {
-    dispatch(addCounter(num + 1))
+export const sumCont = () => (dispatch: Dispatch, getState: () => RootState) => {
+    const { count } = getState().counter
+    dispatch(addCounter(count + 1))
 }
 
 /**
  * Resta el número ingresado
- * @param {number} num 
  * @returns 
  */
-export const restCont = (num: number) => (dispatch: Dispatch) => {
-    dispatch(addCounter(num - 1))
+export const restCont = () => (dispatch: Dispatch, getState: () => RootState) => {
+    const { count } = getState().counter
+    dispatch(addCounter(count - 1))
 }

@@ -9,12 +9,11 @@ export default function Counter() {
     const dispatch = useDispatch()
 
     const sum = () => {
-        dispatch(sumCont(count))
+        dispatch(sumCont())
     }
     const rest = () => {
-        dispatch(restCont(count))
+        dispatch(restCont())
     }
-
 
     return (
         <SCC.StyleCard theme={{ stand: 10 }}>
